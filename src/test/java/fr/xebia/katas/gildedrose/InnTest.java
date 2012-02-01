@@ -113,6 +113,15 @@ public class InnTest {
 		inn.updateQuality();
 		result=(BackstageItem)inn.getItems().get(0);
 		assertThat(result.getQuality()).isEqualTo(initialQuality+3);
+		
+		items.clear();
+		initialQuality=20;
+		initialSellin=0;
+		items.add(new BackstageItem("Backstage", initialSellin, initialQuality));
+		inn=new Inn(items);
+		inn.updateQuality();
+		result=(BackstageItem)inn.getItems().get(0);
+		assertThat(result.getQuality()).isEqualTo(0);
 	}
 	
 	@Test
